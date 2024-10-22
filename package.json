@@ -14,6 +14,7 @@
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-papaparse": "^4.4.0",
     "vite": "^5.4.8"
   },
   "devDependencies": {
