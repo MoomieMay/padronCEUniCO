@@ -1,5 +1,6 @@
 {
   "name": "padronceunico",
+  "homepage": "https://padron-ceunico.netlify.app/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
