@@ -41,6 +41,7 @@ function Padron() {
             setError(null);
         } else {
             setResultados(null); // Si no se encuentra, mostramos un mensaje de error
+
             setError('Usted no se encuentra en el padrón');
         }
     };
@@ -98,11 +99,19 @@ function Padron() {
                                 <p><strong>Nombre:</strong> {resultados['NOMBRES']}</p>
                                 <p><strong>Carrera:</strong> {resultados['NOMBRE DE CARRERA']}</p>
                                 <p><strong>Legajo:</strong> {resultados['LEGAJO']}</p>
+                                <br></br>
+                                <p className='fs-6'>Para más información comunicate con <a href="mailto:juntalectoral.ceuaco@gmail.com">juntalectoral.ceuaco@gmail.com</a></p>
                             </div>
                         </div>
                     )}
 
-                    {error && <div className="row mt-4"><p className="text-danger fw-bolder">{error}</p></div>}
+                    {error && <div className="row mt-4">
+                        <p className="text-danger fw-bolder">{error}</p>
+                        <p className='fs-6'>
+                            Para más información comunicate con{' '}
+                            <a href="mailto:juntalectoral.ceuaco@gmail.com">juntalectoral.ceuaco@gmail.com</a>
+                        </p>
+                    </div>}
                 </div>
             </div>
 
