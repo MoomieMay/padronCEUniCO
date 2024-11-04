@@ -70,7 +70,7 @@ function Padron() {
                         </li>
                         <li>
                             <strong>Art 91:</strong> Serán anulados todos los votos cuyos sobres presenten leyendas o inscripciones que no correspondan en el exterior del mismo
-                            o de la boleta sufragada. Se anularán los botos cuando en los sobres se incluya más de una boleta. Los votos en blanco
+                            o de la boleta sufragada. Se anularán los votos cuando en los sobres se incluya más de una boleta. Los votos en blanco
                             serán considerados como tales y volcados al acta correspondiente.
                         </li>
                         <li>
