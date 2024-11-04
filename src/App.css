@@ -6,3 +6,7 @@
 .requisitos{
   padding-left: 0;
 }
+ 
+h3 .card-header{
+  background-color: aqua;
+}

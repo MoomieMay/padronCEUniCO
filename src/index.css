@@ -100,10 +100,14 @@ input[type=number] {
   -appearance: textfield;
 }
 
+.card-body{
+  padding-left: 2em;
+}
+
 /* Media query para dispositivos móviles */
 @media (max-width: 768px) {
   .card-body {
-    padding: 5px;
+    padding: 10px 15px;
     /* Reducir el padding para pantallas móviles */
   }
 }
@@ -139,4 +143,112 @@ input[type=number] {
 .requisitos{
   padding-left: 0;
   font-weight: bold;
+}
+
+.card-header{
+  background-color: #006066 !important;
+  color: whitesmoke;
+}
+
+.licards{
+  --cardColor:#5fa3a8;
+}
+
+.olcards,
+.olcards * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.olcards {
+  list-style: none;
+  counter-reset: cardCount;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  --cardsGap: 0.75rem;
+  gap: var(--cardsGap);
+  padding-bottom: var(--cardsGap);
+}
+.olcards li {
+  counter-increment: cardCount;
+  display: flex;
+  color: white;
+  --labelOffset: 1rem;
+  --arrowClipSize: 1.5rem;
+  margin-top: var(--labelOffset);
+}
+
+.olcards li::before {
+  content: "Mesa " counter(cardCount, decimal-leading-zero);
+  background: white;
+  border: 1px solid  #5fa3a8;
+  color: var(--cardColor);
+  font-size: 1.2em;
+  font-weight: 700;
+  transform: translateY(calc(-1 * var(--labelOffset)));
+  margin-right: calc(-1 * var(--labelOffset));
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 0.5em;
+}
+
+.olcards li .content {
+  background-color: var(--cardColor);
+  --inlinePadding: 1em;
+  --boxPadding: 0.2em;
+  display: grid;
+  padding: var(--boxPadding) calc(var(--inlinePadding) + var(--arrowClipSize))
+    var(--boxPadding) calc(var(--inlinePadding) + var(--labelOffset));
+  grid-template-areas:
+    "icon title"
+    "icon text";
+  gap: 0em 1em;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--arrowClipSize)) 0,
+    100% 50%,
+    calc(100% - var(--arrowClipSize)) 100%,
+    calc(100% - var(--arrowClipSize)) calc(100% + var(--cardsGap)),
+    0 calc(100% + var(--cardsGap))
+  );
+  position: relative;
+}
+.olcards li .content::before {
+  content: "";
+  position: absolute;
+  width: var(--labelOffset);
+  height: var(--labelOffset);
+  background: var(--cardColor);
+  left: 0;
+  bottom: 0;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  filter: brightness(0.75);
+}
+.olcards li .content::after {
+  content: "";
+  position: absolute;
+  height: var(--cardsGap);
+  width: var(--cardsGap);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.25), transparent 50%);
+  left: 0;
+  top: 100%;
+}
+.olcards li .icon {
+  grid-area: icon;
+  align-self: center;
+  font-size: 1em;
+}
+.olcards li .content .title {
+  grid-area: title;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.olcards li .content .text {
+  grid-area: text;
+  font-size: 1em;
+  margin-top: -5px;
 }
